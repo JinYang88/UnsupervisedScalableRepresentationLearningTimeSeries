@@ -162,7 +162,10 @@ def parse_arguments():
 
     return parser.parse_args()
 
+# for cuda
 # python ucr.py --path ./raw-data/ucr/ --dataset Worms --save_path ./checkpoints --hyper default_hyperparameters.json --cuda --gpu 0
+
+# python ucr.py --path ./raw-data/ucr/ --dataset Worms --save_path ./checkpoints --hyper default_hyperparameters.json
 if __name__ == '__main__':
     args = parse_arguments()
     if args.cuda and not torch.cuda.is_available():

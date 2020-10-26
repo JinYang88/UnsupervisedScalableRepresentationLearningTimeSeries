@@ -15,7 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-
+import joblib
 import math
 import numpy
 import torch
@@ -110,7 +110,7 @@ class TimeSeriesEncoderClassifier(sklearn.base.BaseEstimator,
                '$(prefix_file)_$(architecture)_encoder.pth').
         """
         self.save_encoder(prefix_file)
-        sklearn.externals.joblib.dump(
+        joblib.dump(
             self.classifier,
             prefix_file + '_' + self.architecture + '_classifier.pkl'
         )
